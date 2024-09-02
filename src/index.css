@@ -13,3 +13,29 @@
         scrollbar-width: none;  /* Firefox */
   }
 }
+/* In your global CSS file (e.g., index.css or App.css) */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Customize the scrollbar track */
+::-webkit-scrollbar {
+    width: 9px; /* Width of the scrollbar */
+    height: 5px; /* Height of the scrollbar (for horizontal scrollbars) */
+  }
+  
+  /* Customize the scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #353434; /* Color of the scrollbar */
+    border-radius: 5px; /* Roundness of the scrollbar thumb */
+   
+  }
+  
+  /* Customize the scrollbar track (the empty space behind the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background: #5d5959; /* Background color of the scrollbar track */
+ 
+  }
+  
+
+  

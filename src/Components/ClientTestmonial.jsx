@@ -24,118 +24,65 @@ const ClientTestimonial = () => {
     MozBackgroundClip: "text",
     MozTextFillColor: "transparent",
   };
+
   return (
     <div
-      className="min-h-screen bg-cover  flex flex-col  gap-10  items-center justify-center text-white"
+      className="min-h-screen bg-cover flex flex-col gap-10 md:items-end  justify-center text-white"
       style={{
         backgroundImage:
           "url(https://www.jumblebook.com/assets/images/bg4.jpg)",
       }}
     >
-      <div className="flex gap-16 items-center justify-end w-full  ">
-        <h2 style={ gradientStyle} className="text-6xl leading-relaxed tracking-wider font-bold mb-8 text-start">
+      <div className="flex lg:max-w-screen-xl flex-col md:flex-row  lg:gap-16 items-center justify-center lg:mx-20   px-4">
+        <h2
+          style={gradientStyle}
+          className="xl:text-6xl text-4xl  md:leading-snug lg:tracking-wider font-bold mb-8 text-start  "
+        >
           Client <br /> Testimonial
         </h2>
-        <div className="relative flex items-center justify-center w-full max-w-screen-lg overflow-hidden">
+        <div className="relative flex items-center justify-center w-full md:max-w-screen-lg overflow-hidden">
           <div
             ref={carouselRef}
-            className="flex space-x-20 overflow-x-auto no-scrollbar snap-x snap-mandatory w-full ml-16 px-4 scroll-smooth"
+            className="flex space-x-4 md:space-x-8 overflow-x-auto no-scrollbar snap-x snap-mandatory w-full px-4 scroll-smooth"
           >
-            {/* Testimonial 1 */}
-            <div className=" rounded-2xl snap-center flex-shrink-0  text-black   shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/2.png"
-                alt="Testimonial 1"
-                className="rounded-2xl w-[240px] object-contain "
-              />
-            </div>
-            {/* Testimonial 2 */}
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/3.png"
-                alt="Testimonial 2"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            {/* Testimonial 3 */}
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/4.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/6.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/7.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/8.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/9.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/10.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/11.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/13.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0  text-black  rounded-2xl shadow-md">
-              <img
-                src="https://www.jumblebook.com/assets/img/scr/14.png"
-                alt="Testimonial 3"
-                className="rounded-2xl w-[240px] object-contain"
-              />
-            </div>
+            {/* Testimonial Items */}
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div
+                key={index}
+                className="snap-center flex-shrink-0 text-black rounded-2xl shadow-md"
+              >
+                <img
+                  src={`https://www.jumblebook.com/assets/img/scr/${
+                    index + 2
+                  }.png`}
+                  alt={`Testimonial ${index + 1}`}
+                  className="rounded-2xl w-[200px] sm:w-[240px] object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="flex w-96 justify-end gap-40 ">
+      <div className="flex w-full items-start justify-center gap-32 px-4 md:pl-12 mt-4">
         <button
           onClick={scrollLeft}
-          className=" z-10  bg-opacity-50 rounded-full hover:bg-opacity-75"
+          className=" bg-opacity-50 rounded-full hover:bg-opacity-75"
         >
-          <img src="https://www.jumblebook.com/assets/images/prv.png" className="w-20 object-cover h-12" alt="" />
+          <img
+            src="https://www.jumblebook.com/assets/images/prv.png"
+            className="w-10 h-10 md:w-20 md:h-12  md:object-cover"
+            alt="Previous"
+          />
         </button>
         <button
           onClick={scrollRight}
-          className=" z-10   bg-opacity-50 rounded-full hover:bg-opacity-75"
+          className=" bg-opacity-50 rounded-full hover:bg-opacity-75"
         >
-          <img src="https://www.jumblebook.com/assets/images/nxt.png" alt="" className="w-20 object-cover h-12" />
+          <img
+            src="https://www.jumblebook.com/assets/images/nxt.png"
+            alt="Next"
+            className="w-10 h-10 md:w-20 md:h-12 md:object-cover"
+          />
         </button>
       </div>
     </div>

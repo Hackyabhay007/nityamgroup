@@ -1,34 +1,37 @@
 import React from "react";
 
 const NewYearBanner = () => {
+
+  const gradientStyle = {
+    backgroundImage: "linear-gradient(45deg, #f3ec78, #af4261)",
+    backgroundSize: "100%",
+    backgroundRepeat: "repeat",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    MozBackgroundClip: "text",
+    MozTextFillColor: "transparent",
+  };
+
   return (
     <div className="relative h-screen flex  flex-col justify-center items-center text-center">
       {/* Background Video */}
-     
-      <video
-        className="absolute top-0   left-0 w-full h-full object-cover"
-        src="https://videos.pexels.com/video-files/15448993/15448993-sd_640_360_30fps.mp4"
-        autoPlay
-        loop
-        muted
-      />
 
       {/* Overlay Content */}
-      <div className="relative   z-10  rounded-lg">
-        <img
+      <div className="relative  bg-black/70 p-8   z-0  rounded-lg">
+        {/* <img
           src="https://i.ibb.co/6b4z7fL/happy-new-year-chocolate-style-text-2024-png-11667797205vor7pgmyya-removebg-preview.png"
           alt="Happy New Year 2024"
           className="mx-auto  h-[100px] w-[400px] object-contain"
-        />
-        <p className="text-black bg-[#ffba00] text-lg tracking-wider py-3 px-3 w-fit mx-auto  mb-2 font-semibold">
+        /> */}
+        <p className="text-black bg-[#baa051] rounded-md flex z-10 text-lg tracking-wider py-3 px-3 w-fit mx-auto  mb-2 font-semibold">
           #1 Most Trending Book of Asia
         </p>
-        <h1 className="text-3xl sm:text-6xl font-bold text-white mt-4">
-          JUMBLE BOOK
+        <h1 style={gradientStyle} className="text-3xl sm:text-6xl font-bold text-white mt-4">
+          NITYAM GROUP
         </h1>
         <p className="text-white font-medium mt-4 mb-6">
-          Get your online ID from the most famous book of Asia and experience
-          the newest way to invest and win big from Live Sports.
+          Get your online ID from Asia's most renowned book and discover the
+          latest way to invest and win big with Live Sports.
         </p>
         <div className=" flex mx-auto w-fit flex-col gap-4">
           <button
