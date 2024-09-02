@@ -17,7 +17,7 @@ const NewYearBanner = () => {
       {/* Background Video */}
 
       {/* Overlay Content */}
-      <div className="relative  bg-black/70 p-8   z-0  rounded-lg">
+      <div className="relative  bg-black/70 p-8 py-12   z-0  rounded-lg">
         {/* <img
           src="https://i.ibb.co/6b4z7fL/happy-new-year-chocolate-style-text-2024-png-11667797205vor7pgmyya-removebg-preview.png"
           alt="Happy New Year 2024"
@@ -33,9 +33,9 @@ const NewYearBanner = () => {
           Get your online ID from Asia's most renowned book and discover the
           latest way to invest and win big with Live Sports.
         </p>
-        <div className=" flex mx-auto w-fit flex-col gap-4">
+        <div className=" flex mx-auto w-fit  gap-4">
           <button
-            className="bg-[#cb0203] w-72 mx-auto text-white font-light text-xl tracking-wider py-3 px-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300"
+            className="bg-[#cb0203] w-64 mx-auto text-white font-light text-xl tracking-wider py-3 px-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300"
             aria-label="Get Your User ID"
           >
             GET YOUR USER ID!
