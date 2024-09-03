@@ -28,45 +28,44 @@ const BrandPartners = () => {
       buttonText: "Get Demo ID",
     },
   ];
-  const gradientStyle = {
-    backgroundImage: "linear-gradient(45deg, #f3ec78, #af4261)",
-    backgroundSize: "100%",
-    backgroundRepeat: "repeat",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    MozBackgroundClip: "text",
-    MozTextFillColor: "transparent",
+
+  const cardStyle = {
+    borderRadius: "8px",
+    padding: "20px",
+    textAlign: "center",
+    color: "#ffffff",
   };
 
   return (
     <div
-      className="relative bg-cover bg-center py-32 flex flex-col justify-center "
+      className="relative bg-cover bg-center py-24 px-20 gap-20 flex flex-col justify-center"
       style={{
-        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg2.jpg')`,
+        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg2.jpg')`, // Replace with your new background image URL
       }}
     >
       <h2
-        style={gradientStyle}
-        className="text-center text-3xl sm:text-4xl lg:text-7xl font-bold mb-12"
+        className="text-center text-3xl sm:text-4xl lg:text-6xl font-bold mb-12"
+        style={{
+          backgroundImage: "linear-gradient(45deg, #baa051, #e3d4a0)", // Gold gradient
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          color: "transparent",
+        }}
       >
-        {" "}
         Our Brand Partners
       </h2>
-      <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {partners.map((partner, index) => (
-          <div
-            key={index}
-            className="bg-black w-80 justify-evenly h-72 flex flex-col gap-5 bg-opacity-75 p-4 sm:p-8 rounded-lg text-center text-white shadow-lg "
-          >
+          <div key={index} style={cardStyle} className="shadow-lg shadow-black hover:shadow-white hover:shadow-md hover:scale-105 transition-all duration-700 ease-in-out border-gray-800 border bg-black/70">
             <img
               src={partner.logo}
               alt={partner.name}
-              className="mx-auto mb-4  "
+              className="mx-auto mb-4 h-20" // Set a height for consistency
             />
-            <h3 className="text-xl sm:text-2xl lg:text-3xl tracking-wide font-bold mb-4">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4">
               {partner.name}
             </h3>
-            <button className="text-xl w-fit mx-auto border border-white text-white font-bold py-3 px-12  rounded-md shadow-md  hover:bg-yellow-500 hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out   shadow-white ">
+            <button className="bg-transparent text-xl border border-white py-2 px-6 rounded-md hover:bg-[#baa051] transition-all shadow-white shadow-md  duration-300">
               {partner.buttonText}
             </button>
           </div>

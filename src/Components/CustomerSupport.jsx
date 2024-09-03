@@ -1,6 +1,13 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const CustomerSupport = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false, 
+    threshold: 0.1, 
+  });
+
   return (
     <div
       className="relative bg-cover bg-center h-screen flex flex-col justify-between items-center text-center"
@@ -32,7 +39,13 @@ const CustomerSupport = () => {
           </div>
         </div>
       </div>
-      <div className="pb-16 md:pb-48 px-4 sm:px-8 md:px-12 lg:px-24">
+      <motion.div
+        ref={ref}
+        initial={{ scale: 0.7 }}
+        animate={inView ? { scale: 1 } : { scale: 0.7 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        className="pb-16 md:pb-48 px-4 sm:px-8 md:px-12 lg:px-24"
+      >
         <p className="text-yellow-400 text-lg sm:text-xl md:text-2xl font-bold mt-4">
           <span className="text-white">Welcome to </span>NITYAM GROUP
         </p>
@@ -40,15 +53,15 @@ const CustomerSupport = () => {
           THE KING OF ONLINE GAMES
         </h3>
         <p className="text-white mt-4 max-w-4xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl">
-          India’s most trending and secured online platform where you can invest
-          your money and skills to earn big on cricket, football, tennis, and a
-          wide range of online casino games. No KYC, no documentation needed,
-          24/7 dedicated team to back up your queries, be it creating an ID or
-          withdrawal request, our support team is always ready to give
-          lightning-fast services each time, each second you need! Cheers to
-          your victory!
+          Join India’s most trending and secure online platform, where your
+          money and skills can turn into big wins in cricket, football, tennis,
+          and a wide range of online casino games. No KYC or documentation
+          required—just pure gaming. Our 24/7 dedicated support team is ready to
+          assist with anything from creating your ID to handling withdrawal
+          requests, ensuring you get lightning-fast service whenever you need
+          it. Here’s to your victory!
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

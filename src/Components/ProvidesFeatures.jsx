@@ -1,60 +1,86 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-const features = [
-  {
-    title: "INSTANT WITHDRAWAL & DEPOSIT",
-    icon: "https://www.jumblebook.com/assets/images/trust.png",
-    description: "",
-    bgColor: "bg-yellow-600",
-  },
-  {
-    title: "24/7 CUSTOMER SERVICE",
-    icon: "https://www.jumblebook.com/assets/images/24x7.png",
-    description: "",
-    bgColor: "bg-yellow-600",
-  },
-  {
-    title: "EARN BONUS BY REFERRING FRIENDS",
-    icon: "https://www.jumblebook.com/assets/images/assure.png",
-    description: "",
-    bgColor: "bg-yellow-600",
-  },
-];
+const FeaturesSection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.3,
+  });
 
-const ProvideFeatures = () => {
+  const features = [
+    {
+      title: "Fast Withdrawals and Deposits",
+      icon: "https://www.jumblebook.com/assets/images/trust.png",
+      description: "Experience instant withdrawals and deposits with our seamless financial transactions.",
+     
+    },
+    {
+      title: "Round-the-Clock Customer Support",
+      icon: "https://www.jumblebook.com/assets/images/24x7.png",
+      description: "Our dedicated support team is available 24/7 to assist with any queries or issues.",
+     
+    },
+    {
+      title: "Get Bonuses for Referring Friends",
+      icon: "https://www.jumblebook.com/assets/images/assure.png",
+      description: "Earn exciting bonuses and rewards by referring friends to our platform.",
+     
+    },
+  ];
+
   return (
     <div
-      className="min-h-screen flex flex-col  items-center justify-center bg-cover"
+      ref={ref}
+      className="bg-cover bg-center py-14 md:py-32 min-h-screen flex gap-20 flex-col justify-center items-center"
       style={{
-        backgroundImage:
-          "url(https://www.jumblebook.com/assets/images/bg5.jpg)",
+        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg1.jpg')`, // Background image URL
       }}
     >
-      <div className="flex flex-col items-center gap-4  justify-center">
-        <div className="text-center">
-          <h2 className="md:text-4xl text-xl font-bold text-white mb-4 md:mb-14">
-            We Provide You Guys
-          </h2>
-          <p className="text-white font-bold text-sm mb-12">
-            The Best and Premium Online Betting Service in 5+ Gaming Sites
-          </p>
-        </div>
-        <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-16 w-full px-4">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className={`bg-[#000201] border max-w-md border-[#313536] text-[#f5cf00] py-7 px-10 rounded-lg flex  items-start`}
-            >
-              {" "}
-              <img src={feature.icon} className="md:h-28 h-20 w-20 mr-4 md:w-28" alt="" />
-              <h3 className="md:text-2xl font-bold">{feature.title}</h3>
-              <p>{feature.description}</p>
+      <div className="text-center mb-12">
+        <p
+          style={{
+            backgroundImage: "linear-gradient(45deg, #baa051, #e3d4a0)", // Gold gradient
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+          className="text-5xl md:text-4xl lg:text-7xl font-bold text-gray-800"
+        >
+          Our Key Features
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-10">
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            className={`flex flex-col items-center rounded-3xl p-6  border `}
+            initial={{ opacity: 0, scale: 1.2 }}
+            animate={
+              inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.2 }
+            }
+            transition={{
+              opacity: { duration: 0.5 },
+              scale: { duration: 0.9 },
+              delay: index * 0.3,
+            }}
+          >
+            <img
+              src={feature.icon}
+              alt={feature.title}
+              className="w-16 h-16 object-contain mb-4"
+            />
+            <div className="text-white text-center">
+              <h4 className="text-2xl font-bold mb-2">{feature.title}</h4>
+              {feature.description && (
+                <p className="text-base">{feature.description}</p>
+              )}
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default ProvideFeatures;
+export default FeaturesSection;

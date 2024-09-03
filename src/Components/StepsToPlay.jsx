@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const StepsToPlay = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   const gradientStyle = {
     backgroundImage: "linear-gradient(45deg, #f3ec78, #af4261)",
     backgroundSize: "100%",
@@ -11,154 +19,92 @@ const StepsToPlay = () => {
     MozTextFillColor: "transparent",
   };
 
+  const steps = [
+    {
+      title: "Step 1",
+      text: "GET IN TOUCH! Sign-up using any WhatsApp Number.",
+      color: "#FF5733", // Bright Orange
+      icon: "https://cdn3.iconfinder.com/data/icons/social-line-filled/512/whatsapp__icons__logo__social__media-512.png",
+    },
+    {
+      title: "Step 2",
+      text: "Play Free. Try our platform with a demo ID.",
+      color: "#C70039", // Crimson
+      icon: "https://cdn3.iconfinder.com/data/icons/covid-19-coronavirus-protection-or-prevention-fill/64/NewsCovid-19-256.png",
+    },
+    {
+      title: "Step 3",
+      text: "Easy to Deposit. Easy deposit money in your account.",
+      color: "#900C3F", // Dark Red
+      icon: "https://cdn4.iconfinder.com/data/icons/business-and-finance-colorful-free-hand-drawn-set/100/money_euros-256.png",
+    },
+    {
+      title: "Step 4",
+      text: "Earn Money. Send amount screenshot for order confirmation.",
+      color: "#581845", // Deep Purple
+      icon: "https://cdn4.iconfinder.com/data/icons/untact-society-4/64/atm-interaction-untact-256.png",
+    },
+    {
+      title: "Step 5",
+      text: "Playing Step. Get playing chips for the games.",
+      color: "#1C1C1C", // Black
+      icon: "https://cdn3.iconfinder.com/data/icons/social-line-filled/512/whatsapp__icons__logo__social__media-512.png",
+    },
+    {
+      title: "Step 6",
+      text: "Happy Earning. Now all set. Happy playing & earning.",
+      color: "#FFC300", // Bright Yellow
+      icon: "https://cdn3.iconfinder.com/data/icons/covid-19-coronavirus-protection-or-prevention-fill/64/NewsCovid-19-256.png",
+    },
+  ];
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
     <div
-      className="bg-cover bg-center py-14 gap-6 md:py-32 flex flex-col justify-center items-center"
+      className="bg-cover bg-center py-14 gap-24 md:py-24 flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url('https://www.jumblebook.com/assets/images/bg1.jpg')`,
       }}
     >
-      <div className="w-full md:px-16 flex justify-center md:justify-normal   items-center  ">
-        <p style={gradientStyle} className="text-5xl md:text-4xl lg:text-5xl text-center font-bold text-[#dcc87e] ">
+      <div className="w-full md:px-16 flex justify-center items-center">
+        <p style={gradientStyle} className="text-5xl md:text-4xl lg:text-5xl text-center font-bold text-[#dcc87e]">
           EASY STEPS TO PLAY
         </p>
       </div>
 
-      <div className="w-full px-10 flex flex-col space-y-4">
-        {/* Step 1 */}
-        <div className="flex flex-col  justify-end w-full  md:flex-row">
-          <div className="md:text-4xl text-xl text-[#ee2946] w-fit rounded-t-2xl  md:rounded-tl-full md:rounded-bl-md  bg-black  flex items-end p-2 md:p-4 font-bold">
-            <span>Step 1</span>
-          </div>
-          <div className="bg-[#e22239] rounded-3xl rounded-tl-none  md:rounded-r-3xl text-white w-full md:w-1/2 flex justify-between items-center p-4 md:p-6">
-            <div>
-              <img
-                src="https://cdn3.iconfinder.com/data/icons/social-line-filled/512/whatsapp__icons__logo__social__media-512.png"
-                alt=""
-                className="w-12 h-12 object-contain"
-              />
-            </div>
-            <div className=" w-2/3">
-              <span className="font-medium text-xl md:pl-14 tracking-wider text-center">
-                GET IN TOUCH!
-              </span>
+      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-10">
+        {steps.map((step, index) => (
+          <motion.div
+            key={index}
+            className="flex flex-col items-center rounded-3xl p-6"
+            style={{ backgroundColor: step.color }}
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0, transition: { delay: index * 0.3 } },
+            }}
+          >
+            <div className="text-4xl text-white font-bold mb-4">{step.title}</div>
+            <img
+              src={step.icon}
+              alt={step.title}
+              className="w-12 h-12 object-contain mb-4"
+            />
+            <div className="text-white text-center">
+              <span className="font-medium text-xl">{step.text.split(" ")[0]}</span>
               <br />
-              <span> Sign-up using any WhatsApp Number.</span>
+              {step.text.split(" ").slice(1).join(" ")}
             </div>
-          </div>
-        </div>
-
-        {/* Step 2 */}
-        <div className="flex flex-col md:flex-row">
-          <div className="bg-[#e7501b] rounded-l-3xl text-white w-full md:w-1/2 flex justify-between items-center p-4 md:p-6">
-            <div className="text-center font-bold w-2/3 md:ml-14">
-              <span className="font-medium  uppercase text-xl tracking-wider">
-                Play free{" "}
-              </span>
-              <br />
-              Try our platform with demo ID
-            </div>
-            <div>
-              <img
-                src="https://cdn3.iconfinder.com/data/icons/covid-19-coronavirus-protection-or-prevention-fill/64/NewsCovid-19-256.png"
-                alt=""
-                className="w-12 h-12 object-contain"
-              />
-            </div>
-          </div>
-          <div className="text-3xl text-[#e7501b] rounded-tr-full rounded-b-xl  bg-black  flex items-end p-4 font-bold">
-            <span>Step 2</span>
-          </div>
-        </div>
-
-        {/* Step 3 */}
-        <div className="flex flex-col  justify-end w-full md:flex-row">
-          <div className="md:text-3xl text-xl p-2 text-[#018e30] w-fit rounded-t-2xl  md:rounded-tl-full md:rounded-bl-md   bg-black  flex items-end md:p-4 font-bold">
-            <span>Step 3</span>
-          </div>
-          <div className="bg-[#018e30] rounded-3xl rounded-tl-none md:rounded-r-3xl text-white w-full md:w-1/2 flex justify-between items-center p-4 md:p-6">
-            <div>
-              <img
-                src="https://cdn4.iconfinder.com/data/icons/business-and-finance-colorful-free-hand-drawn-set/100/money_euros-256.png"
-                alt=""
-                className="w-12 h-12 object-contain"
-              />
-            </div>
-            <div className="text-center w-2/3 font-bold md:mr-24">
-             <span className="uppercase text-xl tracking-wider">Easy to deposit</span> 
-              <br />
-              Easy deposit money in your account
-            </div>
-          </div>
-        </div>
-
-        {/* Step 4 */}
-        <div className="flex flex-col md:flex-row">
-          <div className="bg-[#267fd9] rounded-l-3xl text-white w-full md:w-1/2 flex justify-between items-center p-4 md:p-6">
-            <div className="text-center font-bold w-2/3 md:ml-12">
-              <span className=" uppercase text-xl tracking-wider ">Earn Money</span>
-              <br />
-              Send Amount Screenshot for order confirmation
-            </div>
-            <div>
-              <img
-                src="https://cdn4.iconfinder.com/data/icons/untact-society-4/64/atm-interaction-untact-256.png"
-                alt=""
-                className="w-12 h-12 object-contain"
-              />
-            </div>
-          </div>
-          <div className="text-3xl text-[#267fd9] rounded-tr-full rounded-b-xl  bg-black  flex items-end p-4 font-bold">
-            <span>Step 4</span>
-          </div>
-        </div>
-
-        {/* Step 5 */}
-        <div className="flex flex-col justify-end w-full md:flex-row">
-          <div className="md:text-3xl text-xl text-[#e02037] w-fit rounded-t-2xl  md:rounded-tl-full md:rounded-bl-md  bg-black  flex items-end  p-2 md:p-4 font-bold">
-            <span>Step 5</span>
-          </div>
-          <div className="bg-[#e02037] rounded-3xl rounded-tl-none md:rounded-r-3xl text-white w-full md:w-1/2 flex justify-between items-center p-4 md:p-6">
-            <div>
-              <img
-                src="https://cdn3.iconfinder.com/data/icons/social-line-filled/512/whatsapp__icons__logo__social__media-512.png"
-                alt=""
-                className="w-12 h-12 object-contain"
-              />
-            </div>
-            <div className="text-center font-bold w-2/3 md:mr-24 ">
-              <span className=" uppercase text-xl tracking-wider ">
-                Playing Step
-              </span>
-              <br />
-              Get Playing chips for the games
-            </div>
-          </div>
-        </div>
-
-        {/* Step 6 */}
-        <div className="flex flex-col md:flex-row">
-          <div className="bg-[#e8511c] rounded-l-3xl text-white w-full md:w-1/2 flex justify-between items-center p-4 md:p-6">
-            <div className="text-center font-semibold w-2/3  md:ml-12">
-              <span className="font-medium uppercase   text-xl tracking-widest">
-                {" "}
-                Happy Earning
-              </span>
-              <br />
-              Now all set. Happy playing & earning
-            </div>
-            <div className="">
-              <img
-                src="https://cdn3.iconfinder.com/data/icons/covid-19-coronavirus-protection-or-prevention-fill/64/NewsCovid-19-256.png"
-                alt=""
-                className="w-12 h-12 object-contain"
-              />
-            </div>
-          </div>
-          <div className="text-3xl text-[#e8511c] rounded-tr-full rounded-b-xl  bg-black  flex items-end p-4  font-bold">
-            <span>Step 6</span>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

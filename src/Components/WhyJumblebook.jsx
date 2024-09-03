@@ -1,101 +1,119 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  FaShieldAlt,
+  FaHeadset,
+  FaGift,
+  FaDollarSign,
+  FaUserGraduate,
+  FaHandHoldingUsd,
+} from "react-icons/fa";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-const WhyJumblebook = () => {
+const services = [
+  {
+    icon: <FaShieldAlt />,
+    title: "Reliable Services",
+    description:
+      "We provide consistent and reliable services with a commitment to quality and customer satisfaction.",
+  },
+  {
+    icon: <FaHeadset />,
+    title: "24/7 Support",
+    description:
+      "Our dedicated support team is available around the clock to assist with any issues or inquiries.",
+  },
+  {
+    icon: <FaGift />,
+    title: "Exclusive Benefits",
+    description:
+      "Enjoy exclusive benefits and rewards with our loyalty programs and referral bonuses.",
+  },
+  {
+    icon: <FaDollarSign />,
+    title: "More Money",
+    description:
+      "The only exchange on market having panel with rolling commission, the more you pay, the more you earn!",
+  },
+  {
+    icon: <FaUserGraduate />,
+    title: "Educated Staff",
+    description:
+      "10,000+ educated and well-behaved staff members. Versatile payment options like PhonePe, Google Pay, PayTm. NO KYC Required!",
+  },
+  {
+    icon: <FaHandHoldingUsd />,
+    title: "Loyalty Program",
+    description:
+      "India's only exchange in the market with assured winnings of Rs.20,000 per day, along with many exciting offers.",
+  },
+];
+
+const WhyChooseUs = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
   return (
     <div
-      className="bg-black text-white   flex flex-col py-36 items-center justify-center g bg-cover bg-center"
+      className="bg-gray-900 text-white flex flex-col py-24 items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage:
           "url('https://www.jumblebook.com/assets/images/bg5.jpg')",
       }}
     >
-      <h2 className="text-center md:text-5xl p text-2xl lg:text-7xl font-bold mb-12">Why NITYAM GROUP?</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 xl:grid-cols-3 gap-3 xl:gap-12">
-        <div className="bg-[#000201] md:w-fit gap-6 h-60 md:h-80 md:px-10 p-4 md:py-8 border-[#323534] border flex  md:items-start justify-center rounded-md  text-center">
-          <img
-            src="https://www.jumblebook.com/assets/images/trust.png"
-            alt="Image description"
-            className="md:w-24 md:h-24 w-14 h-14 object-cover rounded-md mb-4"
-          />
-          <div className="text-start">
-            <h3 className="text-xl font-bold text-[#ffc910]">
-              YOUR TRUST, OUR <br />
-              SERVICE
+      <h2 className="text-center text-3xl lg:text-5xl font-bold mb-4">
+        Why{" "}
+        <span
+          style={{
+            backgroundImage: "linear-gradient(45deg, #baa051, #e3d4a0)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          Choose
+        </span>{" "}
+        Us?
+      </h2>
+      <p className="text-center text-lg md:text-xl mb-12 px-4">
+        Discover the unparalleled advantages of our services, designed to meet
+        your needs with excellence and efficiency.
+      </p>
+      <div
+        ref={ref}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-6 md:px-12"
+      >
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            className="bg-gray-800 p-6 rounded-lg border border-gray-700 flex flex-col items-center text-center"
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0, transition: { delay: index * 0.3 } },
+            }}
+          >
+            <div className="text-[#baa051] text-4xl mb-4">{service.icon}</div>
+            <h3 className="text-xl font-bold text-[#baa051] mb-2">
+              {service.title}
             </h3>
-            <p className="mt-2 w-60 font-bold md:text-lg">
-              India's most trusted & safest exchange since 2017! With the trust
-              of over 10 Lakh customers & operating 100+ branches with largest
-              verities of exchange websites.
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#000201] md:w-fit gap-6 h-60 p-4 md:h-80 md:px-10 md:py-8 border-[#323534] border flex  items-start justify-center rounded-md  text-center">
-          <img
-            src="https://www.jumblebook.com/assets/images/24x7.png"
-            alt="Image description"
-            className="md:w-24 md:h-24 w-14 h-14 object-cover rounded-md mb-4"
-          />
-          <div className="text-start">
-            <h3 className="text-xl font-bold text-[#ffc910]">
-              QUALITY ASSURED
-            </h3>
-            <p className="mt-2 w-60 font-bold md:text-lg">
-              24x7 Service available without holidays. Get withdrawal within
-              15min(s) & Deposit in 5min(s). Guaranteed by us and many
-              celebrities of India.
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#000201] md:w-fit gap-6 h-60 p-4 md:h-80 md:px-10 md:py-8 border-[#323534] border flex  items-start justify-center rounded-md  text-center">
-          <img
-            src="https://www.jumblebook.com/assets/images/assure.png"
-            alt="Image description"
-            className="md:w-24 md:h-24 w-14 h-14 object-cover rounded-md mb-4"
-          />
-          <div className="text-start">
-            <h3 className="text-xl font-bold text-[#ffc910]">
-              LOYALTY PROGRAM
-            </h3>
-            <p className="mt-2 w-60 font-bold md:text-lg">
-              India's one and only exchange in market where you get assured
-              winning of Rs.20,000/- per-day! Along with many other exciting
-              offers. Play & Earn huge!
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#000201] md:w-fit gap-6 h-60 p-4 md:h-80 md:px-10 md:py-8 border-[#323534] border flex  items-start justify-center rounded-md  text-center">
-          <img
-            src="https://www.jumblebook.com/assets/images/money.png"
-            alt="Image description"
-            className="md:w-24 md:h-24 w-14 h-14 object-cover rounded-md mb-4"
-          />
-          <div className="text-start">
-            <h3 className="text-xl font-bold text-[#ffc910]">More Money</h3>
-            <p className="mt-2 w-60 font-bold md:text-lg">
-              The only exchange on market having panel with rolling commission,
-              the more you pay! the more you earn!
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#000201] md:w-fit gap-6 h-60 p-4 md:h-80 md:px-10 md:py-8 border-[#323534] border flex  items-start justify-center rounded-md  text-center">
-          <img
-            src="https://www.jumblebook.com/assets/images/educated.png"
-            alt="Image description"
-            className="md:w-24 md:h-24 w-14 h-14 object-cover rounded-md mb-4"
-          />
-          <div className="text-start">
-            <h3 className="text-xl font-bold text-[#ffc910]">
-              Educated Staffs
-            </h3>
-            <p className="mt-2 w-60 font-bold md:text-lg">
-              10,000+ Educated & well behaved staffs Versatile. Payment options
-              like PhonePe, Google Pay, PayTm. NO KYC Required!
-            </p>
-          </div>
-        </div>
+            <p className="text-base">{service.description}</p>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default WhyJumblebook;
+export default WhyChooseUs;

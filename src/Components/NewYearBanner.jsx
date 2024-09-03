@@ -1,6 +1,13 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const NewYearBanner = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false, 
+    threshold: 0.1, 
+  });
+
 
   const gradientStyle = {
     backgroundImage: "linear-gradient(45deg, #f3ec78, #af4261)",
@@ -17,7 +24,12 @@ const NewYearBanner = () => {
       {/* Background Video */}
 
       {/* Overlay Content */}
-      <div className="relative  bg-black/70 p-8 py-12   z-0  rounded-lg">
+      <motion.div
+      ref={ref}
+      initial={{ scale: 0.7 }}
+      animate={inView ? { scale: 1 } : { scale: 0.7 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+       className="relative  bg-black/70 md:p-8 py-12 m-4  z-0  rounded-lg">
         {/* <img
           src="https://i.ibb.co/6b4z7fL/happy-new-year-chocolate-style-text-2024-png-11667797205vor7pgmyya-removebg-preview.png"
           alt="Happy New Year 2024"
@@ -33,7 +45,7 @@ const NewYearBanner = () => {
           Get your online ID from Asia's most renowned book and discover the
           latest way to invest and win big with Live Sports.
         </p>
-        <div className=" flex mx-auto w-fit  gap-4">
+        <div className=" md:flex-row flex-col flex gap-4 mx-auto w-fit  gap-4">
           <button
             className="bg-[#cb0203] w-64 mx-auto text-white font-light text-xl tracking-wider py-3 px-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300"
             aria-label="Get Your User ID"
@@ -47,7 +59,7 @@ const NewYearBanner = () => {
             GET YOUR ID!
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

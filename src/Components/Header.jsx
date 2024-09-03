@@ -24,7 +24,7 @@ const Header = () => {
         muted
         onEnded={handleVideoEnd}
       />
-      <div className="fixed top-0   left-0 z-30 p-4">
+      <div className="fixed top-0  left-10  md:left-0 z-30 p-4">
         <button
           onClick={() => setModalIsOpen(true)}
           className="text-xl w-fit mx-auto mr-2 border border-white text-white font-bold py-3 px-10  rounded-md shadow-md  hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out   shadow-white "

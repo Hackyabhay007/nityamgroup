@@ -2,62 +2,71 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-[#090909] xl:min-h-screen text-white p-8">
-      <div className="flex relative max-w-screen-lg mx-auto md:px-12 py-20 md:my-16  items-start  flex-col">
-        <div className=" text-white pt-2  rounded-lg flex items-center space-x-2">
-          <img src="https://www.jumblebook.com/assets/img/footwp.png" alt="" />
-        </div>
-        <hr className=" border my-4 w-full  md:w-[50%]" />
-        <p className="mt-4 text-xs md:text-sm text-[#737571] font-bold text-left tracking-widest leading-5 max-w-lg">
-          THIS WEBSITE IS ONLY FOR 18+ USERS. IF YOU ARE FROM TELANGANA, ORISSA,
-          ASSAM, SIKKIM, AND NAGALAND, PLEASE LEAVE THE WEBSITE IMMEDIATELY.
-        </p>
-
-        <div className="flex gap-5 items-center md:w-80  h-80 justify-center flex-col md:space-x-4 mt-4">
+    <div className="bg-[#090909] text-white p-8">
+      <div className="max-w-screen-lg mx-auto py-12 flex flex-col items-center md:items-start space-y-8">
+        <div className="flex items-center space-x-2">
           <img
             src="https://www.jumblebook.com/assets/img/footwp.png"
-            className="w-52 object-cover h-12"
-            alt=""
+            alt="Footer Logo"
+            className="w-52"
           />
-          <hr className="w-52" />
-          <div className="flex  mt-12 pr-10  gap-5 ">
+        </div>
+
+        <hr className="border my-4 w-full md:w-[50%]" />
+
+        <p className="text-xs md:text-lg text-[#737571] font-bold text-center md:text-left tracking-wider leading-5">
+          This website is intended only for users aged 18 and above. If you are
+          located in Telangana, Orissa, Assam, Sikkim, or Nagaland, please exit
+          the site immediately.
+        </p>
+
+        <div className="flex flex-col items-center space-y-4 md:space-y-0 md:items-start md:flex-row md:space-x-8">
+          {/* <img
+            src="https://www.jumblebook.com/assets/img/footwp.png"
+            className="w-52 object-cover"
+            alt="Footer Icon"
+          /> */}
+          {/* <hr className="w-52 border-[#737571]" /> */}
+          <div className="flex space-x-5">
             <a href="#" className="text-white">
               <img
                 src="https://i.ibb.co/HhCbPST/facebook.png"
                 className="w-10 h-10"
-                alt=""
+                alt="Facebook"
               />
             </a>
             <a href="#" className="text-white">
               <img
                 src="https://i.ibb.co/nPt92Pz/instagram.png"
                 className="w-10 h-10"
-                alt=""
+                alt="Instagram"
               />
             </a>
             <a href="#" className="text-white">
               <img
                 src="https://www.jumblebook.com/tt.png"
                 className="w-10 h-10"
-                alt=""
+                alt="Twitter"
               />
             </a>
           </div>
-          <img
-            src="https://www.jumblebook.com/assets/img/19.png"
-            alt="18+ Disclaimer"
-            className="w-48  object-cover"
-          />
+          <div className="w-60 h-20 bg-[#212121] flex flex-col items-start pl-3 justify-center rounded-md">
+            <span className="text-white flex items-center gap-1 text-center text-md font-bold">
+              <span className="text-red-500 text-xl pb-1">18+</span> Disclaimer
+            </span>
+            <span className="text-gray-400 text-xs text-center ">
+              Content not suitable for minors.
+            </span>
+            <span className="text-gray-400 text-xs text-center ">
+              Proceed with caution.
+            </span>
+          </div>
         </div>
-        <hr className=" w-[40%] -bottom-12  hidden lg:block md:left-14 absolute  border-[#212121] border- " />
-      </div>
-      <div className="mt-4 flex flex-col  relative  items-center lg:items-start justify-center w-full md:max-w-screen-md mx-auto ">
-        <hr className=" w-[40%] -top-4  block lg:hidden  absolute  border-[#212121] border- " />
 
-        <div className="flex w-fit  font-bold tracking-widest flex-col items-center text-[#7a7966] ">
-          <p className="mt-2  font-bold tracking-widest">© 2024 NITYAM GROUP</p>
+        <div className="flex flex-col items-center text-[#7a7966]">
+          <p className="font-bold tracking-widest mt-2">© 2024 NITYAM GROUP</p>
           <p>
-            Designed by <span className="text-white">NITYAM GROUP</span>
+            Designed by <span className="text-[#baa051] text-lg font-medium">NITYAM GROUP</span>
           </p>
         </div>
       </div>
