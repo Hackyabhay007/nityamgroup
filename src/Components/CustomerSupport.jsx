@@ -1,18 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaWhatsapp } from "react-icons/fa";
 
 const CustomerSupport = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false, 
-    threshold: 0.1, 
+    triggerOnce: false,
+    threshold: 0.1,
   });
 
   return (
     <div
       className="relative bg-cover bg-center h-screen flex flex-col justify-between items-center text-center"
       style={{
-        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg1.jpg')`,
+
+        backgroundImage: `url('https://images.pexels.com/photos/269948/pexels-photo-269948.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`,
+        
       }}
     >
       <div className="bg-black  flex justify-center items-center w-full py-4">
@@ -25,17 +28,27 @@ const CustomerSupport = () => {
               CUSTOMER SUPPORT
             </h1>
           </div>
-          <div className="flex flex-wrap justify-center   md:justify-end mt-4 md:mt-0">
-            <img
-              src="https://www.jumblebook.com/assets/img/w1.gif"
-              className="w-[150px] md:w-[255px] md:h-[80px] h-[50px] mx-2"
-              alt=""
-            />
-            <img
-              src="https://www.jumblebook.com/assets/img/w1.gif"
-              className="w-[150px] md:w-[255px] md:h-[80px] h-[50px] mx-2"
-              alt=""
-            />
+          <div className="flex flex-wrap justify-center md:justify-end mt-4 md:mt-0">
+            <div className="w-[250px]  flex flex-col rounded-md items-center justify-center bg-[#baa051] text-white md:w-[255px] h-[70px]  mx-2">
+              <span className="text-black font-semibold text-xl">
+                NITYAM GROUP
+              </span>
+              <a
+                href="https://wa.me/1234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center gap-2">
+                  <FaWhatsapp
+                    className="text-green-500 hover:cursor-pointer"
+                    size={32}
+                  />
+                  <span className="hover:cursor-pointer hover:underline">
+                    Click To Chat
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -44,7 +57,7 @@ const CustomerSupport = () => {
         initial={{ scale: 0.7 }}
         animate={inView ? { scale: 1 } : { scale: 0.7 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="pb-16 md:pb-48 px-4 sm:px-8 md:px-12 lg:px-24"
+        className=" mb-48 md:mb-96 lg:mb-48 px-4 sm:px-8 md:px-12 lg:px-24"
       >
         <p className="text-yellow-400 text-lg sm:text-xl md:text-2xl font-bold mt-4">
           <span className="text-white">Welcome to </span>NITYAM GROUP

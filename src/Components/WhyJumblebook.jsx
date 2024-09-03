@@ -67,8 +67,11 @@ const WhyChooseUs = () => {
     <div
       className="bg-gray-900 text-white flex flex-col py-24 items-center justify-center bg-cover bg-center"
       style={{
+        backgroundRepeat:"no-repeat",
+        backgroundPosition:"center",
+        backgroundSize: "cover", // This ensures the image covers the entire container
         backgroundImage:
-          "url('https://www.jumblebook.com/assets/images/bg5.jpg')",
+          "url('https://images.pexels.com/photos/163408/baseball-baseball-umpire-baseball-catcher-baseball-player-163408.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')",
       }}
     >
       <h2 className="text-center text-3xl lg:text-5xl font-bold mb-4">

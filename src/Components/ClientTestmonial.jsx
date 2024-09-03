@@ -31,7 +31,7 @@ const ClientTestimonial = () => {
       className="min-h-screen bg-cover flex flex-col gap-10 md:items-end justify-center text-white"
       style={{
         backgroundImage:
-          "url(https://www.jumblebook.com/assets/images/bg4.jpg)",
+          "url(https://images.pexels.com/photos/16392815/pexels-photo-16392815/free-photo-of-football-team-enjoying-winning-a-game.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)",
       }}
     >
       <div className="flex lg:max-w-screen-xl flex-col md:flex-row lg:gap-16 items-center justify-center lg:mx-20 px-4">
@@ -42,9 +42,9 @@ const ClientTestimonial = () => {
             WebkitBackgroundClip: "text",
             color: "transparent",
           }}
-          className="xl:text-6xl text-4xl md:leading-snug lg:tracking-wider font-bold mb-8 text-start"
+          className="xl:text-6xl text-4xl md:leading-relaxed lg:tracking-wider font-bold mb-8 text-center md:text-start"
         >
-          Client <br /> Testimonial
+          Client <br /> Feedback
         </h2>
         <div className="relative flex items-center justify-center w-full md:max-w-screen-lg overflow-hidden">
           <button
@@ -56,7 +56,7 @@ const ClientTestimonial = () => {
           </button>
           <div
             ref={carouselRef}
-            className="flex space-x-4 md:space-x-8 overflow-x-auto no-scrollbar snap-x snap-mandatory w-full px-4 scroll-smooth"
+            className="flex space-x-4 md:space-x-10 overflow-x-auto no-scrollbar snap-x snap-mandatory w-full md:px-14 scroll-smooth"
           >
             {/* Testimonial Items */}
             {Array.from({ length: 10 }).map((_, index) => (

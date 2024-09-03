@@ -45,7 +45,7 @@ const FeaturesSection = () => {
             WebkitBackgroundClip: "text",
             color: "transparent",
           }}
-          className="text-5xl md:text-4xl lg:text-7xl font-bold text-gray-800"
+          className="text-4xl lg:text-7xl font-bold text-gray-800"
         >
           Our Key Features
         </p>

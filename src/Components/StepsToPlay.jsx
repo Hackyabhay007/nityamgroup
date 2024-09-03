@@ -70,7 +70,9 @@ const StepsToPlay = () => {
     <div
       className="bg-cover bg-center py-14 gap-24 md:py-24 flex flex-col justify-center items-center"
       style={{
-        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg1.jpg')`,
+        backgroundPosition:"center",
+        backgroundSize: "contain", // This ensures the image covers the entire container
+        backgroundImage: `url('https://images.pexels.com/photos/14460275/pexels-photo-14460275.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`,
       }}
     >
       <div className="w-full md:px-16 flex justify-center items-center">

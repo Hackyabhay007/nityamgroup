@@ -5,7 +5,7 @@ const BrandPartners = () => {
     {
       name: "Betsky Exch",
       logo: "https://www.jumblebook.com/bet.png",
-      buttonText: "Get Your ID",
+      buttonText: "Get Demo ID",
     },
     {
       name: "Radhe Exch",
@@ -38,13 +38,17 @@ const BrandPartners = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center py-24 px-20 gap-20 flex flex-col justify-center"
+      name="target-section"
+      className="relative bg-cover bg-center py-24 px-10 md:px-20 gap-20 flex flex-col justify-center"
       style={{
-        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg2.jpg')`, // Replace with your new background image URL
+        backgroundPosition:"center",
+        backgroundSize: "contain", // This ensures the image covers the entire container
+
+        backgroundImage: `url('https://images.pexels.com/photos/1657327/pexels-photo-1657327.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`, // Replace with your new background image URL
       }}
     >
       <h2
-        className="text-center text-3xl sm:text-4xl lg:text-6xl font-bold mb-12"
+        className="text-center text-4xl lg:text-6xl font-bold md:mb-12"
         style={{
           backgroundImage: "linear-gradient(45deg, #baa051, #e3d4a0)", // Gold gradient
           backgroundClip: "text",
@@ -56,7 +60,11 @@ const BrandPartners = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {partners.map((partner, index) => (
-          <div key={index} style={cardStyle} className="shadow-lg shadow-black hover:shadow-white hover:shadow-md hover:scale-105 transition-all duration-700 ease-in-out border-gray-800 border bg-black/70">
+          <div
+            key={index}
+            style={cardStyle}
+            className="shadow-lg shadow-black hover:shadow-white hover:shadow-md hover:scale-105 transition-all duration-700 ease-in-out border-gray-800 border bg-black/70"
+          >
             <img
               src={partner.logo}
               alt={partner.name}
@@ -65,9 +73,15 @@ const BrandPartners = () => {
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4">
               {partner.name}
             </h3>
-            <button className="bg-transparent text-xl border border-white py-2 px-6 rounded-md hover:bg-[#baa051] transition-all shadow-white shadow-md  duration-300">
-              {partner.buttonText}
-            </button>
+            <a
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-transparent text-xl border border-white py-2 px-6 rounded-md hover:bg-[#baa051] transition-all shadow-white shadow-md  duration-300">
+                {partner.buttonText}
+              </button>
+            </a>
           </div>
         ))}
       </div>
