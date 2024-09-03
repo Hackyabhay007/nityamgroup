@@ -32,12 +32,12 @@ const FeaturesSection = () => {
   return (
     <div
       ref={ref}
-      className="bg-cover bg-center py-14 md:py-32 min-h-screen flex gap-20 flex-col justify-center items-center"
+      className="bg-cover bg-center py-14 md:py-32 min-h-screen flex gap-10 md:gap-20 flex-col justify-center items-center"
       style={{
-        backgroundImage: `url('https://www.jumblebook.com/assets/images/bg1.jpg')`, // Background image URL
+        backgroundImage: `url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362583/pexels-aidan-howe-2427444-4677402_1_bgfrom.jpg')`, // Background image URL
       }}
     >
-      <div className="text-center mb-12">
+      <div className="text-center md:mb-12">
         <p
           style={{
             backgroundImage: "linear-gradient(45deg, #baa051, #e3d4a0)", // Gold gradient
@@ -50,7 +50,7 @@ const FeaturesSection = () => {
           Our Key Features
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-5 md:px-10">
         {features.map((feature, index) => (
           <motion.div
             key={index}

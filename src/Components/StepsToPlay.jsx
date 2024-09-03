@@ -81,7 +81,7 @@ const StepsToPlay = () => {
         </p>
       </div>
 
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-10">
+      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-5 md:px-10">
         {steps.map((step, index) => (
           <motion.div
             key={index}

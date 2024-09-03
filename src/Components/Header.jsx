@@ -24,7 +24,7 @@ const Header = () => {
         muted
         onEnded={handleVideoEnd}
       />
-      <div className="fixed top-0 w-full md:w-fit flex  items-center justify-start md:flex-row md:justify-start md:left-0 z-30 p-4">
+      <div className="md:fixed  absolute  top-32 md:top-0 w-full md:w-fit flex  items-center justify-start md:flex-row md:justify-start md:left-0 z-30 p-4">
         <button
           onClick={() => setModalIsOpen(true)}
           className="text-xl w-fit mx-auto  md:mb-0 md:mr-2 border border-white text-white font-bold py-3 px-10 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
@@ -34,7 +34,7 @@ const Header = () => {
 
         <a
           href="https://wa.me/1234567890"
-          className="text-xl  w-fit mx-auto border border-white text-white font-bold py-3 px-10 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
+          className="text-xl  w-fit mx-auto border border-white text-white font-bold py-3 px-12 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
           target="_blank"
           rel="noopener noreferrer"
         >

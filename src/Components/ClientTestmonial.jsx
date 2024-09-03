@@ -31,7 +31,7 @@ const ClientTestimonial = () => {
       className="min-h-screen bg-cover flex flex-col gap-10 md:items-end justify-center text-white"
       style={{
         backgroundImage:
-          "url(https://images.pexels.com/photos/16392815/pexels-photo-16392815/free-photo-of-football-team-enjoying-winning-a-game.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)",
+          "url(https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-pixabay-73873_tiir87.jpg)",
       }}
     >
       <div className="flex lg:max-w-screen-xl flex-col md:flex-row lg:gap-16 items-center justify-center lg:mx-20 px-4">

@@ -71,7 +71,7 @@ const WhyChooseUs = () => {
         backgroundPosition:"center",
         backgroundSize: "cover", // This ensures the image covers the entire container
         backgroundImage:
-          "url('https://images.pexels.com/photos/163408/baseball-baseball-umpire-baseball-catcher-baseball-player-163408.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')",
+          "url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362582/pexels-pixabay-269948_h5cefa.jpg')",
       }}
     >
       <h2 className="text-center text-3xl lg:text-5xl font-bold mb-4">

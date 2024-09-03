@@ -14,11 +14,11 @@ const CustomerSupport = () => {
       className="relative bg-cover bg-center h-screen flex flex-col justify-between items-center text-center"
       style={{
 
-        backgroundImage: `url('https://images.pexels.com/photos/269948/pexels-photo-269948.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`,
+        backgroundImage: `url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-aidan-howe-2427444-4677402_obykuu.jpg')`,
         
       }}
     >
-      <div className="bg-black  flex justify-center items-center w-full py-4">
+      <div className="bg-black/20  flex justify-center items-center w-full py-4">
         <div className="flex  flex-col md:flex-row justify-between items-center w-[80%] mx-auto">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h2 className="text-green-500 font-bold text-lg sm:text-xl md:text-2xl tracking-wide">
@@ -57,7 +57,7 @@ const CustomerSupport = () => {
         initial={{ scale: 0.7 }}
         animate={inView ? { scale: 1 } : { scale: 0.7 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className=" mb-48 md:mb-96 lg:mb-48 px-4 sm:px-8 md:px-12 lg:px-24"
+        className=" mb-48 md:mb-96 lg:mb-60 px-4 sm:px-8 md:px-12 lg:px-24"
       >
         <p className="text-yellow-400 text-lg sm:text-xl md:text-2xl font-bold mt-4">
           <span className="text-white">Welcome to </span>NITYAM GROUP

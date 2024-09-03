@@ -39,12 +39,9 @@ const BrandPartners = () => {
   return (
     <div
       name="target-section"
-      className="relative bg-cover bg-center py-24 px-10 md:px-20 gap-20 flex flex-col justify-center"
+      className="relative bg-cover bg-center py-24 px-5 md:px-20 gap-10  md:gap-20 flex flex-col justify-center"
       style={{
-        backgroundPosition:"center",
-        backgroundSize: "contain", // This ensures the image covers the entire container
-
-        backgroundImage: `url('https://images.pexels.com/photos/1657327/pexels-photo-1657327.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`, // Replace with your new background image URL
+        backgroundImage: `url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-dnsfotos-2631067_enykra.jpg')`,
       }}
     >
       <h2
