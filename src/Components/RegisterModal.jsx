@@ -42,7 +42,7 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
     }
 
     // Sending email using EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+    emailjs.send('service_mhtzyyj', 'template_6evml38', formData, 'n6e0neKdGFJ-wHxgo')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setSubmitted(true);
