@@ -32,7 +32,7 @@ const FeaturesSection = () => {
   return (
     <div
       ref={ref}
-      className="bg-cover bg-center py-14 md:py-32 min-h-screen flex gap-10 md:gap-20 flex-col justify-center items-center"
+      className="bg-cover overflow-hidden bg-center py-14 md:py-32  md:h-[900px] lg:min-h-screen flex gap-10 md:gap-20 flex-col justify-center items-center"
       style={{
         backgroundImage: `url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362583/pexels-aidan-howe-2427444-4677402_1_bgfrom.jpg')`, // Background image URL
       }}
@@ -54,7 +54,7 @@ const FeaturesSection = () => {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className={`flex flex-col items-center rounded-3xl p-6  border `}
+            className={`flex flex-col bg-black/70 border-gray-700 items-center rounded-3xl p-6  border `}
             initial={{ opacity: 0, scale: 1.2 }}
             animate={
               inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.2 }

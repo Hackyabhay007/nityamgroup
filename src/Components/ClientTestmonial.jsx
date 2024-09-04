@@ -28,7 +28,7 @@ const ClientTestimonial = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover flex flex-col gap-10 md:items-end justify-center text-white"
+      className=" md:h-[900px] lg:min-h-screen bg-cover flex flex-col gap-10 md:items-end justify-center text-white"
       style={{
         backgroundImage:
           "url(https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-pixabay-73873_tiir87.jpg)",

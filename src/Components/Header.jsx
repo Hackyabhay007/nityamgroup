@@ -3,6 +3,7 @@ import NewYearBanner from "./NewYearBanner";
 import logo from "../Assests/Images/logo.png";
 import video1 from "../Assests/Video/Video.mp4";
 import video2 from "../Assests/Video/Video2.mp4";
+import video3 from "../Assests/Video/MobileVideo.mp4";
 import RegisterModal from "./RegisterModal";
 
 const Header = () => {
@@ -15,16 +16,25 @@ const Header = () => {
   };
 
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full md:h-[900px] lg:h-screen">
       <video
         id="backgroundVideo"
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 hidden md:block left-0 w-full h-full object-cover"
         src={video1}
         autoPlay
         muted
         onEnded={handleVideoEnd}
       />
-      <div className="md:fixed   absolute  top-32 md:top-0 w-full md:w-fit flex  items-center justify-start md:flex-row md:justify-start md:left-0 z-30 p-4">
+      <video
+        className="absolute top-0 md:hidden left-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop // Ensures the video loops continuously
+        playsInline // Ensures the video plays inline on mobile devices
+        src={video3}
+      />
+
+      <div className="md:fixed   absolute  top-32 md:top-0 w-full md:w-fit flex  items-center justify-start md:flex-row md:justify-start md:left-0  md:z-40 p-4">
         <button
           onClick={() => setModalIsOpen(true)}
           className="text-xl w-fit mx-auto  md:mb-0 md:mr-2 border border-white text-white font-bold py-3 px-10 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
@@ -46,7 +56,7 @@ const Header = () => {
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
       />
-      <div className=" w-full  relative flex items-center justify-center z-20">
+      <div className=" w-full  relative flex items-center justify-center z-30">
         <img src={logo} alt="Logo" className="h-28 lg:mt-3 object-cover" />
       </div>
       <NewYearBanner />

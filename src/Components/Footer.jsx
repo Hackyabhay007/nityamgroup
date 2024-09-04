@@ -50,15 +50,16 @@ const Footer = () => {
               />
             </a>
           </div>
-          <div className="w-60 h-20 bg-[#212121] flex flex-col items-start pl-3 justify-center rounded-md">
-            <span className="text-white flex items-center gap-1 text-center text-md font-bold">
-              <span className="text-red-500 text-xl pb-1">18+</span> Disclaimer
+          <div className="w-fit h-24 bg-[#212121] flex flex-col items-start pl-3 p-3  justify-center rounded-md">
+            <span className="text-white flex items-center gap-1 text-md font-bold">
+              <span className="text-red-500 text-xl pb-1">18+</span> Galactic
+              Notice
             </span>
-            <span className="text-gray-400 text-xs text-center ">
-              Content not suitable for minors.
+            <span className="text-gray-400 text-xs">
+              Access restricted to Earthlings aged 18 and above.
             </span>
-            <span className="text-gray-400 text-xs text-center ">
-              Proceed with caution.
+            <span className="text-gray-400 text-xs">
+              Unauthorized access may result in interstellar consequences.
             </span>
           </div>
         </div>
@@ -66,7 +67,10 @@ const Footer = () => {
         <div className="flex flex-col items-center text-[#7a7966]">
           <p className="font-bold tracking-widest mt-2">© 2024 NITYAM GROUP</p>
           <p>
-            Designed by <span className="text-[#baa051] text-lg font-medium">NITYAM GROUP</span>
+            Designed by{" "}
+            <span className="text-[#baa051] text-lg font-medium">
+              NITYAM GROUP
+            </span>
           </p>
         </div>
       </div>

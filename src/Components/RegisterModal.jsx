@@ -1,10 +1,10 @@
-// src/components/RegisterModal.js
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
+import emailjs from "emailjs-com"; // Import emailjs
 
-Modal.setAppElement("#root"); // Ensure that your app root element is set
+Modal.setAppElement("#root");
 
-const phoneNumberPattern = /^(?:\+91|91)?\d{10}$/; // Regex for +91 or 91 prefix followed by exactly 10 digits
+const phoneNumberPattern = /^(?:\+91|91)?\d{10}$/;
 
 const RegisterModal = ({ isOpen, onRequestClose }) => {
   const [formData, setFormData] = useState({
@@ -19,14 +19,14 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
     let timer;
     if (submitted) {
       timer = setTimeout(() => {
-        setFormData({ name: "", phoneNumber: "", is18Plus: false }); // Reset form data
-        setErrors({ phoneNumber: "" }); // Clear errors
+        setFormData({ name: "", phoneNumber: "", is18Plus: false });
+        setErrors({ phoneNumber: "" });
         setSubmitted(false);
-        onRequestClose(); // Optionally close the modal after showing success message
+        onRequestClose();
       }, 5000);
     }
 
-    return () => clearTimeout(timer); // Clean up the timer on component unmount or when `submitted` changes
+    return () => clearTimeout(timer);
   }, [submitted, onRequestClose]);
 
   const validatePhoneNumber = (phoneNumber) => {
@@ -41,14 +41,22 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
       return;
     }
 
-    setSubmitted(true);
+    // Sending email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setSubmitted(true);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+      });
   };
 
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onRequestClose} // Handles closing the modal when clicking outside
-      className="fixed inset-0 flex items-center justify-center z-40"
+      onRequestClose={onRequestClose}
+      className="fixed inset-0 flex items-center justify-center z-50"
       overlayClassName="fixed inset-0 bg-black bg-opacity-50"
       contentClassName="bg-white p-6 rounded-lg shadow-lg max-w-md w-full"
     >
@@ -58,18 +66,14 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
         </div>
       ) : (
         <form
-          // style={{
-          //   backgroundPosition: "center",
-          //   backgroundSize: "contain", // This ensures the image covers the entire container
-          //   backgroundImage: `url('https://images.pexels.com/photos/14460275/pexels-photo-14460275.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`,
-          // }}
           onSubmit={handleFormSubmit}
-          className="flex flex-col gap-4 border border-gray-800 bg-black/60 p-10 md:p-20 rounded-md shadow-md"
+          className="flex flex-col gap-4 border border-gray-800 bg-black/80 p-10 md:p-20 rounded-md shadow-md"
         >
           <div>
-            <label className="block text-white mb-2">Name</label>
+            <label className="block text-white mb-2">Full Name</label>
             <input
               type="text"
+              placeholder="Full Name"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
@@ -82,6 +86,7 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
             <label className="block text-white mb-2">Phone Number</label>
             <input
               type="tel"
+              placeholder="Phone Number"
               value={formData.phoneNumber}
               onChange={(e) =>
                 setFormData({ ...formData, phoneNumber: e.target.value })
@@ -110,14 +115,14 @@ const RegisterModal = ({ isOpen, onRequestClose }) => {
           <button
             type="submit"
             className="text-xl w-full mx-auto  md:mb-0 md:mr-2 border border-white text-white font-bold py-2 px-10 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
-            >
+          >
             Register
           </button>
           <button
             type="button"
             onClick={onRequestClose}
             className="text-xl w-full mx-auto  md:mb-0 md:mr-2 border border-white text-white font-bold py-2 px-10 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
-            >
+          >
             Close
           </button>
         </form>
