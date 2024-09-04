@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
           "url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362582/pexels-pixabay-269948_h5cefa.jpg')",
       }}
     >
-      <h2 className="text-center text-3xl lg:text-5xl font-bold mb-4">
+      <h2 className="text-center bg-black/70 p-3 rounded-md text-3xl lg:text-5xl font-bold mb-4">
         Why{" "}
         <span
           style={{

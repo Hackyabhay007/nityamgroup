@@ -11,7 +11,7 @@ const CustomerSupport = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center h-screen flex flex-col justify-between items-center text-center"
+      className="relative  bg-cover bg-center h-screen flex flex-col justify-between items-center text-center"
       style={{
 
         backgroundImage: `url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-aidan-howe-2427444-4677402_obykuu.jpg')`,
@@ -57,7 +57,7 @@ const CustomerSupport = () => {
         initial={{ scale: 0.7 }}
         animate={inView ? { scale: 1 } : { scale: 0.7 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className=" mb-48 md:mb-96 lg:mb-60 px-4 sm:px-8 md:px-12 lg:px-24"
+        className=" mb-48 bg-black/80 rounded-md md:mb-96 lg:mb-60 px-4 sm:px-8 md:px-12 lg:py-6 lg:px-12"
       >
         <p className="text-yellow-400 text-lg sm:text-xl md:text-2xl font-bold mt-4">
           <span className="text-white">Welcome to </span>NITYAM GROUP

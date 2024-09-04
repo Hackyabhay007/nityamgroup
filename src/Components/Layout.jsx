@@ -5,7 +5,7 @@ import '../Style/Styles.css'
 
 const Layout = ({ children }) => {
   return (
-    <div className="custom-scrollbar flex  flex-col min-h-screen">
+    <div className=" flex  flex-col min-h-screen">
       {/* Header */}
       <Header />
 

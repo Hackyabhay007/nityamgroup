@@ -12,7 +12,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <HomePage />
+      <section className="bg-black/70 ">
+        <HomePage />
+      </section>
     </>
   );
 }

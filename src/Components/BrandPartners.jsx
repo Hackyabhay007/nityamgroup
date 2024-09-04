@@ -37,9 +37,10 @@ const BrandPartners = () => {
   };
 
   return (
+    
     <div
       name="target-section"
-      className="relative bg-cover bg-center py-24 px-5 md:px-20 gap-10  md:gap-20 flex flex-col justify-center"
+      className="relative  bg-cover bg-center py-24 px-5 md:px-20 gap-10  md:gap-20 flex flex-col justify-center"
       style={{
         backgroundImage: `url('https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-dnsfotos-2631067_enykra.jpg')`,
       }}
