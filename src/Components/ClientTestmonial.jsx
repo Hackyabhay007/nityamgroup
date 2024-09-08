@@ -1,5 +1,9 @@
 import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import image1 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_63c32d9c.jpg";
+import image2 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_79715ba9.jpg";
+import image3 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_bb197500.jpg";
+import image4 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_e8f597b8.jpg";
 
 const ClientTestimonial = () => {
   const carouselRef = useRef(null);
@@ -16,19 +20,11 @@ const ClientTestimonial = () => {
     }
   };
 
-  // const gradientStyle = {
-  //   backgroundImage: "linear-gradient(45deg, #f3ec78, #af4261)",
-  //   backgroundSize: "100%",
-  //   backgroundRepeat: "repeat",
-  //   WebkitBackgroundClip: "text",
-  //   WebkitTextFillColor: "transparent",
-  //   MozBackgroundClip: "text",
-  //   MozTextFillColor: "transparent",
-  // };
+  const images = [image3, image4, image2, image1];
 
   return (
     <div
-      className=" md:h-[900px] lg:min-h-screen bg-cover flex flex-col gap-10 md:items-end justify-center text-white"
+      className="md:h-[900px] py-12 lg:py-0 lg:min-h-screen bg-cover flex flex-col gap-10 md:items-end justify-center text-white"
       style={{
         backgroundImage:
           "url(https://res.cloudinary.com/ddoj0vu3d/image/upload/v1725362584/pexels-pixabay-73873_tiir87.jpg)",
@@ -59,15 +55,13 @@ const ClientTestimonial = () => {
             className="flex space-x-4 md:space-x-10 overflow-x-auto no-scrollbar snap-x snap-mandatory w-full md:px-14 scroll-smooth"
           >
             {/* Testimonial Items */}
-            {Array.from({ length: 10 }).map((_, index) => (
+            {images.map((image, index) => (
               <div
                 key={index}
                 className="snap-center flex-shrink-0 text-black rounded-2xl shadow-md"
               >
                 <img
-                  src={`https://www.jumblebook.com/assets/img/scr/${
-                    index + 2
-                  }.png`}
+                  src={image}
                   alt={`Testimonial ${index + 1}`}
                   className="rounded-2xl w-[200px] sm:w-[240px] object-contain"
                 />

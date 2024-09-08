@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 const FeaturesSection = () => {
   const { ref, inView } = useInView({
     triggerOnce: false,
-    threshold: 0.3,
+    threshold: 0.5,
   });
 
   const features = [
@@ -61,8 +61,8 @@ const FeaturesSection = () => {
             }
             transition={{
               opacity: { duration: 0.5 },
-              scale: { duration: 0.9 },
-              delay: index * 0.3,
+              scale: { duration:1 },
+              delay: index * 0.4,
             }}
           >
             <img

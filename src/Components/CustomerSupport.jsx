@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const CustomerSupport = () => {
   const { ref, inView } = useInView({
     triggerOnce: false,
-    threshold: 0.1,
+    threshold: 0.2,
   });
 
   return (
@@ -56,7 +56,7 @@ const CustomerSupport = () => {
         ref={ref}
         initial={{ scale: 0.7 }}
         animate={inView ? { scale: 1 } : { scale: 0.7 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
+        transition={{ duration: 1 , ease: "easeOut" }}
         className=" mb-48 bg-black/80 m-3 lg:m-0 p-3  rounded-md md:mb-96 lg:mb-60 px-4 sm:px-8 md:px-12 lg:py-6 lg:px-12"
       >
         <p className="text-yellow-400 text-lg sm:text-xl md:text-2xl font-bold mt-4">

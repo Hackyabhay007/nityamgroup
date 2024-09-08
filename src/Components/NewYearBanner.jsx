@@ -36,7 +36,7 @@ const NewYearBanner = () => {
         initial={{ scale: 0.7 }}
         animate={inView ? { scale: 1 } : { scale: 0.7 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="relative   bg-black/70 md:p-8 py-12 m-4  z-0  rounded-lg"
+        className="relative   bg-black/30 md:p-8 py-12 m-4  z-0  rounded-lg"
       >
         {/* <img
           src="https://i.ibb.co/6b4z7fL/happy-new-year-chocolate-style-text-2024-png-11667797205vor7pgmyya-removebg-preview.png"
