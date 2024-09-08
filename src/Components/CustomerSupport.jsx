@@ -34,7 +34,7 @@ const CustomerSupport = () => {
                 NITYAM GROUP
               </span>
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.link/fnakkx"
                 target="_blank"
                 rel="noopener noreferrer"
               >
