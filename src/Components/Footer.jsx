@@ -5,11 +5,13 @@ const Footer = () => {
     <div className="bg-[#090909] text-white p-8">
       <div className="max-w-screen-lg mx-auto py-12 flex flex-col items-center md:items-start space-y-8">
         <div className="flex items-center space-x-2">
-          <img
+        <a href="https://wa.link/ah6b1r">
+        <img
             src="https://www.jumblebook.com/assets/img/footwp.png"
             alt="Footer Logo"
             className="w-52"
           />
+        </a>
         </div>
 
         <hr className="border my-4 w-full md:w-[50%]" />
