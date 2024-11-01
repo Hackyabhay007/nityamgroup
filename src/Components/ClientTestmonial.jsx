@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import image1 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_63c32d9c.jpg";
-import image2 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_79715ba9.jpg";
-import image3 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_bb197500.jpg";
-import image4 from "../Assests/Images/WhatsApp Image 2024-09-07 at 16.02.53_e8f597b8.jpg";
 
-const ClientTestimonial = () => {
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+// Placeholder video imports
+import video1 from "../Assests/Video/info.mp4";
+import video2 from "../Assests/Video/info1.mp4";
+
+
+const InfluencerShowcase = () => {
   const carouselRef = useRef(null);
 
   const scrollLeft = () => {
@@ -20,7 +22,7 @@ const ClientTestimonial = () => {
     }
   };
 
-  const images = [image3, image4, image2, image1];
+  const videos = [video1, video2];
 
   return (
     <div
@@ -40,7 +42,7 @@ const ClientTestimonial = () => {
           }}
           className="xl:text-6xl text-4xl md:leading-relaxed lg:tracking-wider font-bold mb-8 text-center md:text-start"
         >
-          Client <br /> Feedback
+          Our <br /> Influencers
         </h2>
         <div className="relative flex items-center justify-center w-full md:max-w-screen-lg overflow-hidden">
           <button
@@ -54,16 +56,17 @@ const ClientTestimonial = () => {
             ref={carouselRef}
             className="flex space-x-4 md:space-x-10 overflow-x-auto no-scrollbar snap-x snap-mandatory w-full md:px-14 scroll-smooth"
           >
-            {/* Testimonial Items */}
-            {images.map((image, index) => (
+            {/* Video Items */}
+            {videos.map((video, index) => (
               <div
                 key={index}
                 className="snap-center flex-shrink-0 text-black rounded-2xl shadow-md"
               >
-                <img
-                  src={image}
-                  alt={`Testimonial ${index + 1}`}
+                <video
+                  src={video}
+                  controls
                   className="rounded-2xl w-[200px] sm:w-[240px] object-contain"
+                  alt={`Video ${index + 1}`}
                 />
               </div>
             ))}
@@ -81,4 +84,4 @@ const ClientTestimonial = () => {
   );
 };
 
-export default ClientTestimonial;
+export default InfluencerShowcase;
