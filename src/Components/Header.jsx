@@ -43,7 +43,7 @@ const Header = () => {
         </button>
 
         <a
-          href="http://wame.pro/erju8b"
+          href="https://wa.link/mdja31"
           className="text-xl  w-fit mx-auto border border-white text-white font-bold py-3 px-12 rounded-md shadow-md hover:bg-[#baa051] hover:scale-95 hover:cursor-pointer transition-all duration-1000 ease-in-out shadow-white"
           target="_blank"
           rel="noopener noreferrer"

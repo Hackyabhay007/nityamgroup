@@ -76,7 +76,7 @@ const BrandPartners = () => {
               {partner.name}
             </h3>
             <a
-              href="http://wame.pro/erju8b"
+              href="https://wa.link/mdja31"
               target="_blank"
               rel="noopener noreferrer"
             >

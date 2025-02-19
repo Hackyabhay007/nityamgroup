@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="bg-[#090909] text-white p-8">
       <div className="max-w-screen-lg mx-auto py-12 flex flex-col items-center md:items-start space-y-8">
         <div className="flex items-center space-x-2">
-        <a href="https://wa.link/ah6b1r">
+        <a href="https://wa.link/mdja31">
         <img
             src="https://www.jumblebook.com/assets/img/footwp.png"
             alt="Footer Logo"
